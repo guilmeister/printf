@@ -15,5 +15,5 @@ int get_string(va_list arguments)
         for (count = 0; *printstring != '\0'; count++, printstring++)
                 _putchar(*printstring);
 
-        return (0);
+        return (count);
 }

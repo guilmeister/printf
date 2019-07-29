@@ -49,8 +49,36 @@ int print_decimal(int number)
 int get_decimal(va_list arguments)
 {
 	int decimal;
+	int dec_length;
+	int return_number;
 
 	decimal = va_arg(arguments, int);
 
-	return(print_decimal(decimal));
+	return_number = print_decimal(decimal);
+
+	dec_length = int_count(return_number);
+
+	return(dec_length);
+}
+
+/**
+ * int_count - gets the length of an int/decimal
+ * @n: Int/decimal to count
+ *
+ * Return: Always 0 (Success)
+ */
+
+int int_count(int n)
+{
+	int count = 0;
+
+	if (n < 0)
+		count++;
+
+	while(n != 0)
+	{
+		n /= 10;
+		++count;
+	}
+	return (count);
 }

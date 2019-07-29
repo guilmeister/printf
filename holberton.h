@@ -17,5 +17,6 @@ int get_string(va_list);
 int get_decimal(va_list);
 int get_integer(va_list);
 int _printf(char *format, ...);
+int int_count(int n);
 
 #endif
