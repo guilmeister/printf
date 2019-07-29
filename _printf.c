@@ -13,7 +13,7 @@
 int _printf(char *format, ...)
 {
 	va_list arguments;
-	unsigned int count = 0;
+	int count = 0;
 	int i;
 	int (*fptr)(va_list arguments);
 

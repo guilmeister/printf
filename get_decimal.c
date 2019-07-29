@@ -22,7 +22,10 @@ int print_decimal(int number)
 	}
 
 	else if (number == 0)
-		return (0);
+	{
+		_putchar('0');
+		return (1);
+	}
 
 	else
 		number2 = number;
