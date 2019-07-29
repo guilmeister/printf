@@ -2,24 +2,45 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+/**
+ * print_integer - print the integer ranging from INT_MIN - INT_MAX
+ *
+ * @number: value passed from function get_integer
+ *
+ * Return: number2
+ */
+
 int print_integer(int number)
 {
-	if(number < 0)
+	unsigned int number2;
+
+	if (number < 0)
 	{
 		_putchar('-');
-		number = -number;
+		number2 = -number;
 	}
 
-	if (number == 0)
+	else if (number == 0)
 		return (0);
 
-	if (number / 10 != 0)
-		print_integer(number / 10);
+	else
+		number2 = number;
 
-	_putchar(number % 10 + '0');
+	if (number2 / 10 != 0)
+		print_integer(number2 / 10);
+
+	_putchar(number2 % 10 + '0');
 
 	return (number);
 }
+
+/**
+ * get_integer - gets the value for integer
+ *
+ * @arguments: value from get_percent
+ *
+ * Return: Always 0 (Success)
+ */
 
 int get_integer(va_list arguments)
 {
@@ -27,7 +48,5 @@ int get_integer(va_list arguments)
 
 	integer = va_arg(arguments, int);
 
-	print_integer(integer);
-
-        return (0);
+	return(print_integer(integer));
 }
