@@ -22,6 +22,11 @@ int _printf(char *format, ...)
 		return (-1);
 	for (i = 0; format[i] != '\0'; i++)
 	{
+		if (format[i] == '%' && format[i + 1] == '%')
+		{_putchar('%');
+			i = i + 2;
+			count++;
+		}
 		if (format[i] == '%' && format[i + 1] == ' ')
 		{
 			if (format[i + 2] == '\0')
@@ -30,20 +35,17 @@ int _printf(char *format, ...)
 			count++;
 		}
 		if (format[i] == '%')
-		{	i++;
+		{i++;
 			fptr = get_percent(format[i]);
 			if (fptr == NULL)
-			{_putchar('%');
-				_putchar(format[i]);
-				count++;
-				continue;
-			}
-			count = count + fptr(arguments) - 1;
+				return (-1);
+			count = count + fptr(arguments);
 		}
 		else
-		{	_putchar(format[i]);
+		{_putchar(format[i]);
 			count++;
 		}
+
 	}
 	va_end(arguments);
 	return (count);
