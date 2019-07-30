@@ -3,10 +3,19 @@
 
 #include <stdarg.h>
 
+/**
+ * struct operation - structure for printf
+ *
+ * @operate: operator
+ *
+ * @f: function associated
+ *
+ */
+
 typedef struct operation
 {
-        char operate;
-        int(*f)(va_list arguments);
+	char operate;
+	int (*f)(va_list arguments);
 } ops;
 
 int (*get_percent(const char s))(va_list);

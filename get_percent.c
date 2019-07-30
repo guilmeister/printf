@@ -12,22 +12,22 @@
 
 int (*get_percent(const char s))(va_list)
 {
-        ops percent[] = {
+	ops percent[] = {
 		{'c', get_character},
 		{'s', get_string},
 		{'d', get_decimal},
 		{'i', get_decimal},
 		{'\0', NULL}
-        };
+	};
 
-        int i = 0;
+	int i = 0;
 
-        while (percent[i].operate)
-        {
-                if (percent[i].operate == s)
-                        return (percent[i].f);
+	while (percent[i].operate)
+	{
+		if (percent[i].operate == s)
+			return (percent[i].f);
 
-                i++;
-        }
-        return (NULL);
+		i++;
+	}
+	return (NULL);
 }

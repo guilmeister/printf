@@ -51,5 +51,5 @@ int get_integer(va_list arguments)
 
 	integer = va_arg(arguments, int);
 
-	return(print_integer(integer));
+	return (print_integer(integer));
 }

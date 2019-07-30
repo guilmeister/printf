@@ -39,30 +39,31 @@ int print_decimal(int number)
 }
 
 /**
- * get_decimal - gets the value for decimal (base10)
+ * get_decimal - gets the value for decimal
  *
- * @arguments: value from get_percent
+ * @arguments: value from printf
  *
- * Return: Always 0 (Success)
+ * Return: dec_length
  */
 
 int get_decimal(va_list arguments)
 {
 	int decimal;
 	int dec_length;
-	int return_number;
+	int get_number;
 
 	decimal = va_arg(arguments, int);
 
-	return_number = print_decimal(decimal);
+	get_number = print_decimal(decimal);
 
-	dec_length = int_count(return_number);
+	dec_length = int_count(get_number);
 
-	return(dec_length);
+	return (dec_length);
 }
 
 /**
  * int_count - gets the length of an int/decimal
+ *
  * @n: Int/decimal to count
  *
  * Return: Always 0 (Success)
@@ -75,7 +76,7 @@ int int_count(int n)
 	if (n < 0)
 		count++;
 
-	while(n != 0)
+	while (n != 0)
 	{
 		n /= 10;
 		++count;
