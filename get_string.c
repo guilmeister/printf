@@ -18,7 +18,7 @@ int get_string(va_list arguments)
 	printstring = va_arg(arguments, char *);
 
 	if (printstring == NULL)
-		return (0);
+		return (-1);
 
 	for (count = 0; *printstring != '\0'; count++, printstring++)
 		_putchar(*printstring);
