@@ -27,5 +27,6 @@ int get_decimal(va_list);
 int get_integer(va_list);
 int _printf(char *format, ...);
 int int_count(int n);
+int get_percentchar(va_list);
 
 #endif
