@@ -14,11 +14,11 @@ int _printf(char *format, ...)
 {
 	va_list arguments;
 	int count = 0;
-	int i = 0;
+	int i;
 	int (*fptr)(va_list arguments);
 
 	va_start(arguments, format);
-	if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
 	for (i = 0; format[i] != '\0'; i++)
@@ -33,7 +33,8 @@ int _printf(char *format, ...)
 				count += _putchar('%');
 				count += _putchar(format[i]);
 			}
-			count = count + fptr(arguments);
+			if (fptr != NULL)
+				count = count + fptr(arguments);
 		}
 		else
 		{	_putchar(format[i]);
