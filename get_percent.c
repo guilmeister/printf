@@ -17,6 +17,7 @@ int (*get_percent(const char s))(va_list)
 		{'s', get_string},
 		{'d', get_decimal},
 		{'i', get_decimal},
+		{'r', get_reverse},
 		{'R', get_rot13},
 		{'\0', NULL}
 	};
