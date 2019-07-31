@@ -38,7 +38,10 @@ int _printf(char *format, ...)
 		{i++;
 			fptr = get_percent(format[i]);
 			if (fptr == NULL)
-				return (-1);
+                        {       _putchar('%');
+                                _putchar(format[i]);
+                                continue;
+                        }
 			count = count + fptr(arguments);
 		}
 		else
