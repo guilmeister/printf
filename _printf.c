@@ -22,18 +22,8 @@ int _printf(char *format, ...)
 		return (-1);
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] == '%' && format[i + 1] == '%')
-		{	_putchar('%');
-			i = i + 2;
-			count++;
-		}
 		if (format[i] == '%' && format[i + 1] == ' ')
-		{
-			if (format[i + 2] == '\0')
-				return (-1);
-			i = i + 2;
-			count++;
-		}
+			return (-1);
 		if (format[i] == '%')
 		{	i++;
 			fptr = get_percent(format[i]);

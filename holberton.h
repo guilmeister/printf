@@ -29,5 +29,6 @@ int _printf(char *format, ...);
 int int_count(int n);
 int get_rot13(va_list);
 int get_reverse(va_list);
+int get_perc(va_list);
 
 #endif
