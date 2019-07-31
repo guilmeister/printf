@@ -23,7 +23,7 @@ int _printf(char *format, ...)
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%' && format[i + 1] == '%')
-		{_putchar('%');
+		{	_putchar('%');
 			i = i + 2;
 			count++;
 		}
@@ -35,17 +35,17 @@ int _printf(char *format, ...)
 			count++;
 		}
 		if (format[i] == '%')
-		{i++;
+		{	i++;
 			fptr = get_percent(format[i]);
 			if (fptr == NULL)
-                        {       _putchar('%');
-                                _putchar(format[i]);
-                                continue;
-                        }
+			{	_putchar('%');
+				_putchar(format[i]);
+				continue;
+			}
 			count = count + fptr(arguments);
 		}
 		else
-		{_putchar(format[i]);
+		{	_putchar(format[i]);
 			count++;
 		}
 
